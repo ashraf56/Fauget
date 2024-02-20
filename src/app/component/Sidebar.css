@@ -1,0 +1,12 @@
+
+  .custommenu {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    line-height: 26px;
+  }
+ 
+  .custommenu li span:hover{
+    color: #069D95;
+    background: transparent;
+  }
