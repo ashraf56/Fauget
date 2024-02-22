@@ -1,10 +1,34 @@
+'use client'
 import Image from 'next/image';
 import React from 'react';
 import img from '@/asset/Heroicon.jpg'
 import { FaMicrophone } from "react-icons/fa6";
 import { IoSearch } from "react-icons/io5";
+import Login from '../Login/Login';
+import Signup from '../Signup/Signup';
 const Navbar = () => {
-    let user = false
+    let user = true
+    const LoginModal = () => {
+        const modal = document.getElementById('my_modal_1');
+        if (!modal) {
+            return
+        }
+        else {
+            modal.showModal();
+        }
+
+    };
+    const SignupModal = () => {
+        const modal = document.getElementById('my_modal_2');
+        if (!modal) {
+            return
+        }
+        else {
+            modal.showModal();
+        }
+
+    };
+
     return (
         <div>
             <div className="navbar my-4 container mx-auto ">
@@ -38,12 +62,15 @@ const Navbar = () => {
 
                         </div></div> :
                         <div className='flex gap-6 justify-center'>
-                            <button className='w-[210px] h-[50px] text-white bg-[#060606] text-lg rounded-[25px]'>Sign in </button>
-                            <button className='w-[210px] h-[50px] text-white bg-[#3B3B3B33] text-lg rounded-[25px] border-[#000000CC] border-[1px]'>Sign Up</button>
+                            <button onClick={ LoginModal} className='w-[210px] h-[50px] text-white bg-[#060606] text-lg rounded-[25px]'>Sign in </button>
+                            <button onClick={SignupModal} className='w-[210px] h-[50px] text-white bg-[#3B3B3B33] text-lg rounded-[25px] border-[#000000CC] border-[1px]'>Sign Up</button>
                         </div>
                     }
                 </div>
             </div>
+            {/* all modals dialog will appear here */}
+            <Login></Login>
+            <Signup></Signup>
         </div>
     );
 };
