@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Bigbuton = ({name}) => {
+const Bigbuton = ({name,w}) => {
     return (
-        <button className='w-[210px] h-[50px] btn bg-[#060606]'>
+        <button className={`w-${w} h-[50px] btn bg-[#060606]`}>
 {name}
         </button>
     );
