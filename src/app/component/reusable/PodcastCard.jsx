@@ -11,7 +11,7 @@ const PodcastCard = ({data}) => {
             }}>
                 <div className="card-body  justify-center items-center mx-auto">
                
-                   <div className='text-white w-full text-center bg-opacity-0'>
+                   <div className='text-white w-full text-center '>
                    <MdOutlinePlayCircle className=' text-7xl' />
                    </div>
                     <div className="card-actions justify-end">

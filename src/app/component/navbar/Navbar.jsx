@@ -6,8 +6,9 @@ import { FaMicrophone } from "react-icons/fa6";
 import { IoSearch } from "react-icons/io5";
 import Login from '../Login/Login';
 import Signup from '../Signup/Signup';
+import CustomButton from '../reusable/CustomButton';
 const Navbar = () => {
-    let user = true
+    let user = false
     const LoginModal = () => {
         const modal = document.getElementById('my_modal_1');
         if (!modal) {
@@ -62,7 +63,8 @@ const Navbar = () => {
 
                         </div></div> :
                         <div className='flex gap-6 justify-center'>
-                            <button onClick={ LoginModal} className='w-[210px] h-[50px] text-white bg-[#060606] text-lg rounded-[25px]'>Sign in </button>
+                           
+                       <a onClick={LoginModal}> <CustomButton w={'210px'} bgc={'#060606'} name={'Sign in'}  radius={'25px'} /> </a>     
                             <button onClick={SignupModal} className='w-[210px] h-[50px] text-white bg-[#3B3B3B33] text-lg rounded-[25px] border-[#000000CC] border-[1px]'>Sign Up</button>
                         </div>
                     }
