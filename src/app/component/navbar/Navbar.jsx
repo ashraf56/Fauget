@@ -65,7 +65,8 @@ const Navbar = () => {
                         <div className='flex gap-6 justify-center'>
                            
                        <a onClick={LoginModal}> <CustomButton w={'210px'} bgc={'#060606'} name={'Sign in'}  radius={'25px'} /> </a>     
-                            <button onClick={SignupModal} className='w-[210px] h-[50px] text-white bg-[#3B3B3B33] text-lg rounded-[25px] border-[#000000CC] border-[1px]'>Sign Up</button>
+                       <a onClick={SignupModal} className='border-[#000000CC] border-[1px] rounded-[25px] '> <CustomButton w={'210px'} bgc={'#3B3B3B33'} name={'Sign up'}  radius={'25px'} /> </a>     
+                            
                         </div>
                     }
                 </div>

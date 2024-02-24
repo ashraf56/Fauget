@@ -1,25 +1,19 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
-import imgs from '@/asset/pod.jpg'
 import { MdOutlinePlayCircle } from "react-icons/md";
 const PodcastCard = ({data}) => {
-    let i=  imgs
+   
     return (
         <div>
-            <div className="card w-[190px] h-[198px]  shadow-xl   rounded-[35px] backdrop-brightness-105 " style={{
-                backgroundImage:`url(${data.album.cover})`, backgroundSize:'cover',objectFit:'contain', 
-            }}>
-                <div className="card-body  justify-center items-center mx-auto">
-               
-                   <div className='text-white w-full text-center '>
-                   <MdOutlinePlayCircle className=' text-7xl' />
-                   </div>
-                    <div className="card-actions justify-end">
-                       
-                    </div>
+            <div className="relative w-[190px] h-[198px] shadow-xl rounded-[35px] overflow-hidden">
+                <Image src={data.album.cover} alt="Podcast Cover" width={180} height={180} className="w-full h-full object-cover brightness-50 bg-center" />
+                <div className="absolute inset-0 flex justify-center items-center">
+                  <Link href={`/podcastdetail?info=${data.title}&data=${data.album.cover_big}`}><MdOutlinePlayCircle className="text-white text-7xl" />
+                  </Link>  
                 </div>
             </div>
-            <h1 className='text-lg text-white px-5 py-3'>Music</h1>
+            <h1 className="text-lg text-white px-5 py-3">Music</h1>
         </div>
     );
 };
