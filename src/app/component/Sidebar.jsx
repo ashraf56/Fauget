@@ -1,4 +1,5 @@
-import React from 'react';
+'use client'
+import React, { useContext, useState } from 'react';
 import line from '@/asset/Line.svg'
 import Image from 'next/image';
 import logo from '@/asset/Logo.svg';
@@ -9,13 +10,13 @@ import { MdQueueMusic } from "react-icons/md";
 import { IoSettingsOutline } from "react-icons/io5";
 import './Sidebar.css'
 import Link from 'next/link';
+import { UserContext } from '@/context/UserProvider';
 const Sidebar = () => {
-
-    let user = false
+ let{ user ,handleLogout}= useContext(UserContext)
     const menus1 = [
         { name: "Home", link: "/", icon: IoMdHome },
         { name: "Podcast", link: "/podcastmain", icon: PiMusicNoteFill },
-        { name: "Setting", link: "/", icon: IoSettingsOutline },
+        { name: "Setting", link: "/setting", icon: IoSettingsOutline },
     ];
     const menus2 = [
         { name: "Playlist #A", link: "/", icon: IoMdHome },
@@ -43,7 +44,7 @@ const Sidebar = () => {
                     </Link>
 
                     </li>))}
-                    <li><span> <span className='pe-2'><LuLogOut /></span>Logout</span></li>
+                   { user && <li onClick={handleLogout}><span> <span className='pe-2'><LuLogOut /></span>Logout</span></li>}
                 </div>
 
                 <div className='absolute bottom-4'>

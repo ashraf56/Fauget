@@ -3,6 +3,7 @@ import "./globals.css";
 import Link from "next/link";
 import Sidebar from "./component/Sidebar";
 import Navbar from "./component/navbar/Navbar";
+import { UserProvider } from "@/context/UserProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,6 +14,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
+    <UserProvider>
     <html lang="en">
       <body className={inter.className}>
 
@@ -35,5 +37,6 @@ export default function RootLayout({ children }) {
 
       </body>
     </html>
+    </UserProvider>
   );
 }

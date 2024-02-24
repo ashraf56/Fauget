@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image';
-import React from 'react';
+import React, { useContext } from 'react';
 import img from '@/asset/Heroicon.jpg'
 import { FaMicrophone } from "react-icons/fa6";
 import { IoHome, IoSearch } from "react-icons/io5";
@@ -8,8 +8,10 @@ import Login from '../Login/Login';
 import Signup from '../Signup/Signup';
 import CustomButton from '../reusable/CustomButton';
 import { MdOpenInBrowser } from 'react-icons/md';
+import { UserContext } from '@/context/UserProvider';
 const Navbar = () => {
-    let user = true
+    let{ user }= useContext(UserContext)
+
     const LoginModal = () => {
         const modal = document.getElementById('my_modal_1');
         if (!modal) {
@@ -90,7 +92,7 @@ const Navbar = () => {
                   
                    <div className='navbar-end  lg:hidden '>
                    <div className='flex justify-end  gap-4 '>
-               {  !user  &&  <div className="btn btn-ghost btn-circle avatar">
+               {  user  &&  <div className="btn btn-ghost btn-circle avatar">
                                 <div className="w-10 rounded-full">
                                     <Image src={img} alt="T" width={50} height={50} />
                                 </div>
