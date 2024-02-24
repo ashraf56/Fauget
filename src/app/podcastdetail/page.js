@@ -5,18 +5,18 @@ import PodcastCard from '../component/reusable/PodcastCard';
 import Groupebtn from '../component/reusable/Groupebtn';
 import Podcast from '../component/Podcast/Podcast';
 
-const Podcastdetail = async({ searchParams }) => {
+const Podcastdetail = async ({ searchParams }) => {
 
-    let { data,info } = searchParams
-   
-let buttns= [
-    {id:1 , name:'Related'}
-]
+    let { data, info } = searchParams
+
+    let buttns = [
+        { id: 1, name: 'Related' }
+    ]
     return (
         <div>
-            <PodcastDetail data={data} info={info}/>
+            <PodcastDetail data={data} info={info} />
             <Groupebtn bt={buttns}></Groupebtn>
-           <Podcast first={0} second={5}></Podcast>
+            <Podcast first={0} second={5}></Podcast>
         </div>
     );
 };

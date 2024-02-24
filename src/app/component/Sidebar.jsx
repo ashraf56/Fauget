@@ -12,7 +12,7 @@ import './Sidebar.css'
 import Link from 'next/link';
 import { UserContext } from '@/context/UserProvider';
 const Sidebar = () => {
- let{ user ,handleLogout}= useContext(UserContext)
+    let { user, handleLogout } = useContext(UserContext)
     const menus1 = [
         { name: "Home", link: "/", icon: IoMdHome },
         { name: "Podcast", link: "/podcastmain", icon: PiMusicNoteFill },
@@ -44,7 +44,7 @@ const Sidebar = () => {
                     </Link>
 
                     </li>))}
-                   { user && <li onClick={handleLogout}><span> <span className='pe-2'><LuLogOut /></span>Logout</span></li>}
+                    {user && <li onClick={handleLogout}><span> <span className='pe-2'><LuLogOut /></span>Logout</span></li>}
                 </div>
 
                 <div className='absolute bottom-4'>

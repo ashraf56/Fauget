@@ -10,7 +10,7 @@ import CustomButton from '../reusable/CustomButton';
 import { MdOpenInBrowser } from 'react-icons/md';
 import { UserContext } from '@/context/UserProvider';
 const Navbar = () => {
-    let{ user }= useContext(UserContext)
+    let { user } = useContext(UserContext)
 
     const LoginModal = () => {
         const modal = document.getElementById('my_modal_1');
@@ -89,23 +89,23 @@ const Navbar = () => {
                         </div>
                     }
                 </div>
-                  
-                   <div className='navbar-end  lg:hidden '>
-                   <div className='flex justify-end  gap-4 '>
-               {  user  &&  <div className="btn btn-ghost btn-circle avatar">
-                                <div className="w-10 rounded-full">
-                                    <Image src={img} alt="T" width={50} height={50} />
-                                </div>
-                            </div>}
-                   <label htmlFor="my-drawer-2" className="btn btn-circle drawer-button lg:hidden">
-                    <IoHome/>
-                   </label>
-                   </div>
 
-                    </div>     
+                <div className='navbar-end  lg:hidden '>
+                    <div className='flex justify-end  gap-4 '>
+                        {user && <div className="btn btn-ghost btn-circle avatar">
+                            <div className="w-10 rounded-full">
+                                <Image src={img} alt="T" width={50} height={50} />
+                            </div>
+                        </div>}
+                        <label htmlFor="my-drawer-2" className="btn btn-circle drawer-button lg:hidden">
+                            <IoHome />
+                        </label>
+                    </div>
 
-                  
-               
+                </div>
+
+
+
             </div>
             {/* all modals dialog will appear here */}
             <Login></Login>

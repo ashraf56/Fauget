@@ -3,7 +3,7 @@ import Buttons from "./component/Buttons/Buttons";
 import Allbanner from "./component/Allbanner/Allbanner";
 
 export default function Home() {
- 
+
 
   return (
     <main className="  bg-[#191919]">

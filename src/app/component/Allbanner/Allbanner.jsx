@@ -5,12 +5,12 @@ import LoggedBanner from '../LoggedBanner/LoggedBanner';
 import Banner from '../Banner/Banner';
 
 const Allbanner = () => {
-    let{ user }= useContext(UserContext)
+    let { user } = useContext(UserContext)
 
     return (
         <div>
             {
-                user ? <LoggedBanner> </LoggedBanner>: <Banner></Banner>
+                user ? <LoggedBanner> </LoggedBanner> : <Banner></Banner>
             }
         </div>
     );
